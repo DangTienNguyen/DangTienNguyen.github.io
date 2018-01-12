@@ -1,8 +1,7 @@
----
-layout: post
-title: Pirates arrrr
+--- layout: post 
+title: Pirates arrrr 
 tags: [pirates, random]
----
+ ---
 <!DOCTYPE html>
 <html lang="en">
 
