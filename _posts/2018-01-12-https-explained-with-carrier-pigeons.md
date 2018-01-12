@@ -1,4 +1,8 @@
---- layout: post title: Giải thích HTTPS qua bồ câu đưa thư tags: [Cryptography] ---
+---
+layout: post
+title: Pirates arrrr
+tags: [pirates, random]
+---
 <!DOCTYPE html>
 <html lang="en">
 
