@@ -1,10 +1,10 @@
 --- 
 layout: post 
-title: Giải thích HTTPS qua bồ câu đưa thư
-tags: [Cryptography, Security, Tech]
+title: Giải thích HTTPS qua bồ câu đưa thư 
+tags: [Cryptography, Security, Tech] 
 ---
 
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +16,63 @@ tags: [Cryptography, Security, Tech]
 <body>
     <img src="https://cdn-images-1.medium.com/max/1600/1*vHF6NNdZX9ziiW_uRYzvAA.png" alt="">
     <p>
-        Mật mã có thể là một chủ đề khó hiểu. Nó chưa đầy những sự chứng minh bằng toán học. Trừ khi bạn đang thực sự phát triển hệ thống mật mã, phần lớn những sự phức tạp đó không cần thiết để hiểu cái gì đang diễn ra thật rõ ràng.
+        Mật mã có thể là một chủ đề khó hiểu. Nó chưa đầy sự rắc rối của toán học. Trừ khi bạn đang thực sự phát triển hệ thống mật
+        mã, phần lớn những sự phức tạp đó không cần thiết để hiểu thật rõ ràng điều gì đang diễn ra.
     </p>
+    <br>
+    <p>
+        Nếu bạn đọc bài báo nàu và hi vọng rằng mình có thể tạo ra giao thức HTTPS kế tiếp, tôi phải xin lỗi khi nói rằng những chú
+        chim câu này là chưa đủ. Trái lại, hãy pha chút cafe và thưởng thức bài viết này nào!
+    </p>
+    <br>
+    <h3>
+        Alice, Bob và ... chim bồ câu?
+    </h3>
+    <p> Bất kì hoạt động nào bạn làm trên Internet (như đọc báo, mua đồ trên Amazon, upload ảnh mèo) chung qui lại đều gửi và
+        nhận tin nhắn từ một máy chủ (server).</p>
+    <p>
+        Điều này khá là trừu tượng vậy nên hãy tưởng tượng rằng những tin nhắn này được giao bởi những chú chim bồ câu đưa thư.Tôi
+        biết sự so sánh này có vẻ tùy tiện, nhưng hãy tin rằng HTTPS hoạt động tương tự như vậy, mặc dù nhanh hơn rất nhiều.
+    </p>
+    <p>
+        Đồng thời, thay vì nói về máy chủ, máy khách và những tên hacker, chúng tôi sẽ nói về Alice, Bob và Mallory. Nếu đây không
+        phải là lần đầu tiên bạn cố gắng hiểu những khái niệm mật mã, bạn sẽ nhận ra những cái tên này, bởi họ được sử dụng
+        rộng rãi trong các tài liệu kĩ thuật.
+    </p>
+    <br>
+    <h3>
+        Cuộc giao tiếp ngây thơ
+    </h3>
+    <p>
+        Nếu Alice muốn gửi một tin nhắn tới Bob, cô ấy sẽ buộc mẩu tin nhắn vào chân của chim bồ câu và gửi nó tới cho Bob. Bob nhận
+        được tin nhắn, đọc nó và mọi thứ có vẻ tốt.
+    </p>
+    <br>
+    <p>
+        Nhưng điều gì sẽ xảy ra nếu Mallory chặn lại được con chim bồ câu của Alice trên chuyến bay và thay đổi tin nhắn? Bob sẽ
+        không có cách nào biết được rằng tin nhắn được gửi bởi Alice đã bị thay đổi trong lúc vận chuyển.
+    </p>
+    <br>
+    <p>
+        Đó là cách HTTP làm việc. Khá là đáng sợ nhỉ? Tôi sẽ không gửi chứng từ ngân hàng của tôi qua HTTP và bạn cũng nên như vậy.
+    </p>
+    <br>
+    <h3>
+        Mật mã bí mật
+    </h3>
+    <p>
+        Bây giờ, sẽ ra sao nếu Alice và Bob tinh ranh hơn. Họ đồng ý răng họ sẽ viết những tin nhắn dưới dạng mật mã bí mật. Họ sẽ
+        xê dịch mỗi chữ cái đi 3 vị trí trong bảng chữ cái. Ví dụ: D->A, E->B, F->C. Chẳng hạn đoạn tin nhắn thuần thúy "secret
+        message" sẽ trở thành "pbzobq jbppxdb" khi được mã hóa.
+    </p>
+    <br>
+    <p>
+        Giờ nếu Mallory chặn lại được con chim bồ câu, cô ta sẽ không thể đổi đoạn tin nhắn thành thứ gì có nghĩa, đương nhiên cũng
+        không thể hiểu nó nói về điều gì, bởi vì cô ấy không biết mật mã. Nhưng Bob có thể đơn giản áp dụng mật mã đỏa ngược
+        và giải mã tin nhắn, A->D, B->E, C->F. Đoạn văn bản mã hóa "pbzobq jbppxdb" sẽ được giải mã trở lại thành "secret
+        message".
+    </p>
+
 </body>
 
 </html>
